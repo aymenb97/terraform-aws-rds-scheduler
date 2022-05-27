@@ -26,6 +26,14 @@ resource "aws_lambda_function" "this" {
   role             = aws_iam_role.lambda_exec.arn
   source_code_hash = data.archive_file.this.output_base64sha256
   handler          = var.lambda_handler
+  environment {
+    variables = {
+      START_EVENT = "start"
+      STOP_EVENT  = "stop"
+      TAG_KEY     = "rds-scheduled-start-stop"
+      TAG_VALUE   = "true"
+    }
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "this" {

@@ -11,8 +11,8 @@ module "eventbridge" {
 }
 module "lambda" {
   source         = "../lambda"
-  lambda_runtime = "python3.6"
-  lambda_handler = "func.handler"
-  policy_arns    = ["arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole", "arn:aws:iam::aws:policy/AmazonRDSFullAccess"]
+  lambda_runtime = "python3.8"
+  lambda_handler = "func.lambda_handler"
+  policy_arns    = ["arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole", "arn:aws:iam::aws:policy/AmazonRDSFullAccess", "arn:aws:iam::aws:policy/ResourceGroupsandTagEditorReadOnlyAccess"]
   region         = "us-east-1"
 }

@@ -18,7 +18,7 @@ resource "aws_cloudwatch_event_target" "lambda_start" {
   arn       = var.lambda_arn
   input     = <<JSON
   {
-  "eventType": "${var.start_event_name}"
+  "EventType": "${var.start_event_name}"
   }
  JSON
 }
@@ -28,7 +28,7 @@ resource "aws_cloudwatch_event_target" "lambda_stop" {
   arn       = var.lambda_arn
   input     = <<JSON
   {
-   "eventType": "${var.stop_event_name}"   
+   "EventType": "${var.stop_event_name}"   
   }
  JSON
 }

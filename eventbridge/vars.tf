@@ -6,11 +6,11 @@ variable "stop_cron" {
 }
 variable "start_event_name" {
   description = "Name of the Start event detail in Event Bridge"
-  default     = "start-event"
+  default     = "start"
 }
 variable "stop_event_name" {
   description = "Name of the Stop event detail in Event Bridge"
-  default     = "stop-event"
+  default     = "stop"
 }
 variable "lambda_arn" {
   description = "ARN of the lambda function"
